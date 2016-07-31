@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Chart from '../../Chart'
 
 class Languages extends Component {
     render() {
@@ -9,9 +10,16 @@ class Languages extends Component {
             </li>
         ))
 
+        const chartOptions = {
+            series: [{ data: [ 1,2,3 ]}]
+        }
+
         return (
             <section>
                 <h2 id='languages'>Languages</h2>
+
+                Chart:
+                <Chart container='language-chart' options={chartOptions}/>
 
                 <ul className='languages fa-ul flex-container'>
                     {languages}
