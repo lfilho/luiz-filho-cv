@@ -60,29 +60,35 @@ class Education extends Component {
                     {academyCourses}
                 </div>
 
-                <h3 id='relevant-courses'>
-                    Relevant courses taken
-                    <small>
-                        <i className='fa fa-commenting-o fa-flip-horizontal'></i>
-                        {relevantCourses.length} courses on software, entrepreneurship, leadership and self development with a total of ~{relevantCoursesTotalDuration} hours
-                    </small>
-                </h3>
+                <div className='flex-container'>
+                    <div id='relevant-courses'>
+                        Relevant courses taken
+                        <small>
+                            <i className='fa fa-commenting-o fa-flip-horizontal'></i>
+                            {relevantCourses.length} courses on software, entrepreneurship, leadership and self development with a total of ~{relevantCoursesTotalDuration} hours
+                        </small>
+                    </div>
 
-                <ul className='courses fa-ul flex-container'>
-                    {relevantCourses}
-                </ul>
+                    {/*
+                    <ul className='courses fa-ul flex-container'>
+                        {relevantCourses}
+                    </ul>
+                    */}
 
-                <h3 id='relevant-events'>
-                    Relevant events attended
-                    <small>
-                        <i className='fa fa-commenting-o fa-flip-horizontal'></i>
-                        {relevantEvents.length} events on technology and entrepreneurship in different cities and countries
-                    </small>
-                </h3>
+                    <div id='relevant-events'>
+                        Relevant events attended
+                        <small>
+                            <i className='fa fa-commenting-o fa-flip-horizontal'></i>
+                            {relevantEvents.length} events on technology and entrepreneurship in different cities and countries
+                        </small>
+                    </div>
 
-                <ul className='events fa-ul flex-container'>
-                    {relevantEvents}
-                </ul>
+                    {/*
+                    <ul className='events fa-ul flex-container'>
+                        {relevantEvents}
+                    </ul>
+                    */}
+                </div>
             </section>
         )
     }

@@ -33,7 +33,6 @@ h6:hover .header-link {
 
 p {
     margin: 0.5rem 0;
-    /* text-indent: 1rem; */
 }
 
 p.first,
@@ -175,7 +174,6 @@ h4,
 .summary,
 .talk {
     margin: .8rem 0;
-    text-indent: 0;
 }
 
 .fa-ul li {
