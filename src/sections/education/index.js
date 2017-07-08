@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './style.css'
 
+import CollapsibleComponent from '../../util/collapsible-component'
+
 class Education extends Component {
     render() {
         const education = this.props.data
@@ -44,6 +46,12 @@ class Education extends Component {
             </li>
         ))
 
+        const relevantCoursesListingElement = (
+            <ul className='courses fa-ul flex-container'>
+                {relevantCourses}
+            </ul>
+        )
+
         const relevantCoursesTotalDuration = Math.round(
             education.relevantCourses.reduce((sum, entry) => sum + entry.duration, 0)
         )
@@ -58,6 +66,12 @@ class Education extends Component {
                 </small>
             </li>
         ))
+
+        const relevantEventsListingElement = (
+            <ul className='events fa-ul flex-container'>
+                {relevantEvents}
+            </ul>
+        )
 
         return (
             <section>
@@ -75,9 +89,7 @@ class Education extends Component {
                     </small>
                 </h3>
 
-                <ul className='courses fa-ul flex-container'>
-                    {relevantCourses}
-                </ul>
+                <CollapsibleComponent label="courses" expandTo={relevantCoursesListingElement}/>
 
                 <h3 id='relevant-events'>
                     Relevant events attended
@@ -87,9 +99,7 @@ class Education extends Component {
                     </small>
                 </h3>
 
-                <ul className='events fa-ul flex-container'>
-                    {relevantEvents}
-                </ul>
+                <CollapsibleComponent label="events" expandTo={relevantEventsListingElement}/>
             </section>
         )
     }

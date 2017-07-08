@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactAutoLink from 'react-autolink'
+import CollapsibleComponent from '../../util/collapsible-component'
 import './style.css'
 
 const createBookEntry = (entry, i) => (
@@ -22,6 +23,17 @@ class OffTopic extends Component {
             </p>
         ))
 
+        const softSkillsListingElement = (
+            <ul className='books fa-ul flex-container'>
+                {softSkillsBooks}
+            </ul>
+        )
+        const softwareListingElement = (
+            <ul className='books fa-ul flex-container'>
+                {softwareBooks}
+            </ul>
+        )
+
         return (
             <section>
                 <h2 id='off-topics'>
@@ -43,9 +55,7 @@ class OffTopic extends Component {
                     </small>
                 </h4>
 
-                <ul className='books fa-ul flex-container'>
-                    {softwareBooks}
-                </ul>
+                <CollapsibleComponent label="books" expandTo={softwareListingElement}/>
 
                 <h4 id='relevant-content-entrepreneurship'>
                     <i className='fa fa-book'></i>
@@ -56,9 +66,7 @@ class OffTopic extends Component {
                     </small>
                 </h4>
 
-                <ul className='books fa-ul flex-container'>
-                    {softSkillsBooks}
-                </ul>
+                <CollapsibleComponent label="books" expandTo={softSkillsListingElement}/>
 
                 <h3 id='my-free-time'>Free time</h3>
 
