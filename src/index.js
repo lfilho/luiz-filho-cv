@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-snapshot'
 
 import './css/normalize.css'
 import './css/base.css'
@@ -11,7 +11,7 @@ import CV from './CV'
 import linkifyAnchors from './util/linkify-anchors'
 import trackPageView from './util/google-analytics'
 
-ReactDOM.render(
+render(
     <CV />,
     document.getElementById('root'),
     linkifyAnchors
