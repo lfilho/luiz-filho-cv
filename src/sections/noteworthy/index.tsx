@@ -1,30 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
+import { library as fontAwesomeLibrary } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
-import AnchoredHeader from '../../lib/anchored-header.js'
+import AnchoredHeader from "../../lib/anchored-header";
 
-fontAwesomeLibrary.add(faCaretRight)
+fontAwesomeLibrary.add(faCaretRight);
 
-export default class Noteworthy extends Component {
-    render() {
-        const entries = this.props.data.map((entry, i) => (
-            <React.Fragment>
-                <FontAwesomeIcon icon={faCaretRight} />
-                <span>{entry}</span>
-            </React.Fragment>
-        ))
+export default class Noteworthy extends Component<{ data: object }> {
+  render() {
+    const entries = this.props.data.map((entry, i) => (
+      <React.Fragment>
+        <FontAwesomeIcon icon={faCaretRight} />
+        <span>{entry}</span>
+      </React.Fragment>
+    ));
 
-        return (
-            <section>
-                <AnchoredHeader level='2'>Certifications and Noteworthy achievements</AnchoredHeader>
+    return (
+      <section>
+        <AnchoredHeader level="2">
+          Certifications and Noteworthy achievements
+        </AnchoredHeader>
 
-                <div className='noteworthy icon-grid-container'>
-                    {entries}
-                </div>
-            </section>
-        )
-    }
+        <div className="noteworthy icon-grid-container">{entries}</div>
+      </section>
+    );
+  }
 }
